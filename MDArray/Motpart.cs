@@ -1,6 +1,6 @@
 ﻿namespace MDArray
 {
-    internal class Motpart
+    public class Motpart
     {
         public Motpart(int type)
         {
@@ -13,10 +13,14 @@
         public static Motpart Brf => new Motpart(2);
         public static Motpart Ovriga => new Motpart(3);
 
-        public new bool Equals(object obj)
+        public new int GetHashCode()
         {
-            var motpart = obj as Motpart;
-            return motpart?.Type == Type;
+            return Type;
+        }
+
+        public bool Equals(Motpart motpart)
+        {
+            return Type == motpart.Type;
         }
     }
 }

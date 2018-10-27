@@ -1,6 +1,6 @@
 ﻿namespace MDArray
 {
-    internal class RiskGrupp
+    public class RiskGrupp
     {
         public RiskGrupp(int type)
         {
@@ -13,10 +13,14 @@
         public static RiskGrupp B => new RiskGrupp(2);
         public static RiskGrupp C => new RiskGrupp(3);
 
-        public new bool Equals(object obj)
+        public new int GetHashCode()
         {
-            var riskGrupp = obj as RiskGrupp;
-            return riskGrupp?.Type == Type;
+            return Type;
+        }
+
+        public bool Equals(RiskGrupp riskGrupp)
+        {
+            return Type == riskGrupp.Type;
         }
     }
 }

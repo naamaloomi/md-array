@@ -2,11 +2,11 @@
 
 namespace MDArray
 {
-    internal class Regelverk
+    public class Regelverk
     {
         // Definiera regelverk.
-        private static readonly Dictionary<(Motpart, RiskGrupp, Bransch), PropaKrav> Rules =
-            new Dictionary<(Motpart, RiskGrupp, Bransch), PropaKrav>
+        internal static Dictionary<(Motpart, RiskGrupp, Bransch), PropaKrav> Rules =
+            new Dictionary<(Motpart, RiskGrupp, Bransch), PropaKrav>(new RegelverkKeyEqualityComparer())
             {
                 {(Motpart.Brf, RiskGrupp.A, Bransch.A), PropaKrav.ObligatoriskPerGrupp},
                 {(Motpart.Brf, RiskGrupp.A, Bransch.B), PropaKrav.ObligatoriskPerGrupp},

@@ -1,6 +1,6 @@
 ﻿namespace MDArray
 {
-    internal class Bransch
+    public class Bransch
     {
         public Bransch(int type)
         {
@@ -13,10 +13,14 @@
         public static Bransch B => new Bransch(2);
         public static Bransch C => new Bransch(3);
 
-        public new bool Equals(object obj)
+        public new int GetHashCode()
         {
-            var bransch = obj as Bransch;
-            return bransch?.Type == Type;
+            return Type;
+        }
+
+        public bool Equals(Bransch bransch)
+        {
+            return Type == bransch.Type;
         }
     }
 }

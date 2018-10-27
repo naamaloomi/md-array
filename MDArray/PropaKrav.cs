@@ -1,6 +1,6 @@
 ﻿namespace MDArray
 {
-    internal class PropaKrav
+    public class PropaKrav
     {
         public PropaKrav(int type, string name)
         {
@@ -14,12 +14,6 @@
         public static PropaKrav Valfri => new PropaKrav(1, "Valfri");
         public static PropaKrav ObligatoriskPerMotpart => new PropaKrav(2, "Obligatorisk per motpart");
         public static PropaKrav ObligatoriskPerGrupp => new PropaKrav(3, "Obligatorisk per grupp");
-
-        public new bool Equals(object obj)
-        {
-            var krav = obj as PropaKrav;
-            return krav?.Type == Type;
-        }
 
         public override string ToString()
         {

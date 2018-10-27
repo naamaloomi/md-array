@@ -2,7 +2,7 @@
 
 namespace MDArray
 {
-    internal class Program
+    public class Program
     {
         private static void Main()
         {
@@ -12,6 +12,7 @@ namespace MDArray
 
             var krav = Regelverk.GetPropaKrav(motpart, riskGrupp, bransch);
             Console.WriteLine(krav);
+            Console.ReadKey();
         }
     }
 }
